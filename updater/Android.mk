@@ -21,11 +21,11 @@ LOCAL_SRC_FILES := $(updater_src_files)
 ifeq ($(TARGET_USERIMAGES_USE_EXT4), true)
 LOCAL_CFLAGS += -DUSE_EXT4
 LOCAL_C_INCLUDES += system/extras/ext4_utils
-LOCAL_STATIC_LIBRARIES += libext4_utils_static libz
+LOCAL_STATIC_LIBRARIES += libext4_utils_static libz libsparse_static
 endif
 
 LOCAL_STATIC_LIBRARIES += $(TARGET_RECOVERY_UPDATER_LIBS) $(TARGET_RECOVERY_UPDATER_EXTRA_LIBS)
-LOCAL_STATIC_LIBRARIES += libapplypatch libedify libmtdutils libminzip libz
+LOCAL_STATIC_LIBRARIES += libapplypatch libedify libmtdutils libminzip libz libsparse_static
 LOCAL_STATIC_LIBRARIES += libmincrypt libbz
 LOCAL_STATIC_LIBRARIES += libminelf
 LOCAL_STATIC_LIBRARIES += libcutils libstdc++ libc
